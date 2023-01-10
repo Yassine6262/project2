@@ -1,5 +1,5 @@
 body {
-    background: #1eb286
+    background: grey;
   }
   
    
@@ -16,14 +16,14 @@ body {
     display: flex;
     height: 80px;
     width: 100%;
-    background: #06d5a1;
+    background: #6d7878;
     align-items: center;
     justify-content: space-between;
     padding: 0 50px 0 100px;
     flex-wrap: wrap;
   }
   nav .logo{
-    color: #fff;
+    color: rgb(0, 0, 0);
     font-size: 35px;
     font-weight: 600;
   }
@@ -36,7 +36,7 @@ body {
     margin: 0 5px;
   }
   nav ul li a{
-    color: #f2f2f2;
+    color: #000000;
     text-decoration: none;
     font-size: 18px;
     font-weight: 500;
@@ -51,7 +51,7 @@ body {
     background: #fff;
   }
   nav .menu-btn i{
-    color: #fff;
+    color: rgb(0, 221, 255);
     font-size: 22px;
     cursor: pointer;
     display: none;
@@ -102,7 +102,7 @@ body {
     nav ul li a.active,
     nav ul li a:hover{
       background: none;
-      color: cyan;
+      color: rgb(0, 255, 255);
     }
   }
   .content{
@@ -139,31 +139,7 @@ body {
     display: flex;
     justify-content: center;
     width: 100%;
-    background-color: #06d5a1;
+    background-color: rgb(168, 162, 162);
     height: 9vh;
     padding-top: 18px;
-  }
-  
-   
-  
-  .container {
-    position: absolute;
-    height: 60%;
-    width: 100%;
-    top: 22%;
-  }
-  
-   
-  
-  #foto {
-    position: center;
-    height: 40rem;
-    top: 20%;
-    left: 8%;
-  }
-  #codee {
-    position: center;
-    height: 15rem;
-    top: 15%;
-    left: 8%;
-  }
+  } 
