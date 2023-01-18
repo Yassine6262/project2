@@ -1,12 +1,12 @@
 /**
- * Namespace
+ * Naamruimte
  */
 var Game      = Game      || {};
 var Keyboard  = Keyboard  || {}; 
 var Component = Component || {};
 
 /**
- * Keyboard Map
+ * Toetsen indelen
  */
 Keyboard.Keymap = {
   37: 'left',
@@ -16,11 +16,11 @@ Keyboard.Keymap = {
 };
 
 /**
- * Keyboard Events
+ * Toetsenbord Events
  */
 Keyboard.ControllerEvents = function() {
   
-  // Setts
+  // Instellingen
   var self      = this;
   this.pressKey = null;
   this.keymap   = Keyboard.Keymap;
@@ -37,7 +37,7 @@ Keyboard.ControllerEvents = function() {
 };
 
 /**
- * Game Component Stage
+ * Game Componenten Stages
  */
 Component.Stage = function(canvas, conf) {  
   
@@ -55,7 +55,7 @@ Component.Stage = function(canvas, conf) {
     fps  : 1000
   };
   
-  // Merge Conf
+  // De configuratie combineren
   if (typeof conf == 'object') {
     for (var key in conf) {
       if (conf.hasOwnProperty(key)) {
@@ -67,38 +67,38 @@ Component.Stage = function(canvas, conf) {
 };
 
 /**
- * Game Component Snake
+ * Game Componenten Snake
  */
 Component.Snake = function(canvas, conf) {
   
   // Game Stage
   this.stage = new Component.Stage(canvas, conf);
   
-  // Init Snake
+  // Initialisatie van Snake
   this.initSnake = function() {
     
-    // Itaration in Snake Conf Size
+    // Herhaling in Snake's Configuratie Grootte
     for (var i = 0; i < this.stage.conf.size; i++) {
       
-      // Add Snake Cells
+      // Toevoeging van Snake Cellen
       this.stage.length.push({x: i, y:0});
     }
   };
   
-  // Call init Snake
+  // Oproep van de initialisatie van Snake
   this.initSnake();
   
-  // Init Food  
+  // Initialisatie van het eten  
   this.initFood = function() {
     
-    // Add food on stage
+    // Het toevoegen van eten op het canvas
     this.stage.food = {
       x: Math.round(Math.random() * (this.stage.width - this.stage.conf.cw) / this.stage.conf.cw), 
       y: Math.round(Math.random() * (this.stage.height - this.stage.conf.cw) / this.stage.conf.cw), 
     };
   };
   
-  // Init Food
+  // Initialisatie van het eten
   this.initFood();
   
   // Restart Stage
@@ -114,28 +114,28 @@ Component.Snake = function(canvas, conf) {
 };
 
 /**
- * Game Draw
+ * Game tekenen
  */
 Game.Draw = function(context, snake) {
   
-  // Draw Stage
+  // Stage tekenen
   this.drawStage = function() {
     
-    // Check Keypress And Set Stage direction
+    // Het checken van de toets indruk en Stage richting instellen
     var keyPress = snake.stage.keyEvent.getKey(); 
     if (typeof(keyPress) != 'undefined') {
       snake.stage.direction = keyPress;
     }
     
-    // Draw White Stage
+    // Witte Stage tekenen
     context.fillStyle = "blue";
     context.fillRect(0, 0, snake.stage.width, snake.stage.height);
     
-    // Snake Position
+    // Snake Positie
     var nx = snake.stage.length[0].x;
     var ny = snake.stage.length[0].y;
     
-    // Add position by stage direction
+    // Positie toevoegen door Stage richting
     switch (snake.stage.direction) {
       case 'right':
         nx++;
@@ -151,13 +151,13 @@ Game.Draw = function(context, snake) {
         break;
     }
     
-    // Check Collision
+    // Het checken van botsingen
     if (this.collision(nx, ny) == true) {
       snake.restart();
       return;
     }
     
-    // Logic of Snake food
+    // De logica achter Snake's eten
     if (nx == snake.stage.food.x && ny == snake.stage.food.y) {
       var tail = {x: nx, y: ny};
       snake.stage.score++;
@@ -169,20 +169,20 @@ Game.Draw = function(context, snake) {
     }
     snake.stage.length.unshift(tail);
     
-    // Draw Snake
+    // Snake tekenen
     for (var i = 0; i < snake.stage.length.length; i++) {
       var cell = snake.stage.length[i];
       this.drawCell(cell.x, cell.y);
     }
     
-    // Draw Food
+    // Eten tekenen
     this.drawCell(snake.stage.food.x, snake.stage.food.y);
     
-    // Draw Score
+    // Score tekenen
     context.fillText('Score: ' + snake.stage.score, 5, (snake.stage.height - 5));
   };
   
-  // Draw Cell
+  // Cellen tekenen
   this.drawCell = function(x, y) {
     context.fillStyle = 'rgb(170, 170, 170)';
     context.beginPath();
@@ -190,7 +190,7 @@ Game.Draw = function(context, snake) {
     context.fill();
   };
   
-  // Check Collision with walls
+  // Botsingen checken met de muren
   this.collision = function(nx, ny) {  
     if (nx == -1 || nx == (snake.stage.width / snake.stage.conf.cw) || ny == -1 || ny == (snake.stage.height / snake.stage.conf.cw)) {
       return true;
@@ -217,7 +217,7 @@ Game.Snake = function(elementId, conf) {
 
 
 /**
- * Window Load
+ * Venster Laden
  */
 window.onload = function() {
   var snake = new Game.Snake('stage', {fps: 80, size: 4});
