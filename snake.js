@@ -128,7 +128,7 @@ Game.Draw = function(context, snake) {
     }
     
     // Draw White Stage
-    context.fillStyle = "white";
+    context.fillStyle = "blue";
     context.fillRect(0, 0, snake.stage.width, snake.stage.height);
     
     // Snake Position

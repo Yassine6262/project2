@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="body1">
+    <script src="./java.js"></script>
+    <link rel='stylesheet' type='text/css'  media="screen" href="style.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat"rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
+  <link rel="stylesheet" href="game.css">
+</head>
+<div class="menu-bar">
+
+  <h1 class="logo">Techniek <span>College</span></h1>
+
+  <ul>
+
+    <li><a href="Home.html">Home</a></li>
+
+    <li><a href="#">Favoriete game <i class="fas fa-caret-down"></i></a>
+
+
+
+        <div class="dropdown-menu">
+
+            <ul>
+
+              <li><a href="Yassine.html">Yassine</a></li>
+
+              <li><a href="fav.html">Bilal</a></li>
+
+              <li><a href="favo.kennedi.html">Kennedi</a></li>
+
+              <li>
+
+                <a href="#">Game <i class="fas fa-caret-right"></i></a>
+
+               
+
+                <div class="dropdown-menu-1">
+
+                  <ul>
+
+                    <li><a href="snake.html">Yassine</a></li>
+
+                    <li><a href="game.html">Bilal</a></li>
+
+                    <li><a href="tiktokto.html">Kennedi</a></li>
+
+                  </ul>
+
+                </div>
+
+              </li>
+
+             
+
+            </ul>
+
+          </div>
+
+    </li>
+
+    <li><a href="portfolio.yassine.html">Portfolio Yassine</a></li>
+
+    <li><a href="port.html">Portfolio Bilal</a></li>
+
+    <li><a href="portfolio.html">Portfolio Kennedi</a></li>
+
+  </ul>
+
+</div>
+
+</div>
+
+<body>
+  <section id="player-login">
+    <div id="intro">
+      <h1>Welkom bij mijn game<br /><span>Laten we beginnen</span></h1>
+    </div>
+    <form>
+      <input type="text" id="player" placeholder="Your name" /><br />
+      <input
+        type="number"
+        id="round-number"
+        max="10"
+        min="3"
+        placeholder="Number of rounds"
+      /><br />
+      <input type="button" id="submit" onclick="login()" value="START" />
+    </form>
+  </section>
+
+  <section id="results-section">
+    <div id="results-screen">
+      <div class="player-results">
+        <div id="final-player-name" class="final-name">Estaban</div>
+        <div id="final-player-score" class="final-score">10</div>
+        <div class="details">
+          <li>Wins: <span id="player-wins">0</span></li>
+          <li>Draws: <span id="draws">0</span></li>
+          <li>Losses: <span id="player-losses">0</span></li>
+        </div>
+      </div>
+      <div class="comp-results">
+        <div id="final-computer-name" class="final-name">John</div>
+        <div id="final-computer-score" class="final-score">10</div>
+        <div class="details">
+          <li>Wins: <span id="computer-wins">0</span></li>
+          <li>Draws: <span id="draws">0</span></li>
+          <li>Losses: <span id="computer-losses">0</span></li>
+        </div>
+      </div>
+      <div id="final-comment">
+        <span id="winner-name">Niemand</span> Wint😱🥳
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <h1>Regels</h1>
+    <p>
+      De regels zijn zeer vanzelfsprekend dus ik ga der van uit dat u geen uitleg nodig heeft.
+    </p>
+    <p>
+      <b
+        >Alles wat je moet weten is:<br />-Papier(👊) verslaat schaar(✌)<br />-schaar(✌)
+        verslaat papier(🖐)<br />-Papier(🖐) verslaat steen(👊)</b
+      >
+    </p>
+    <input type="button" onclick="faq()" value="CLOSE" />
+  </section>
+
+  <section id="game">
+    <div id="dashboard">
+      <div id="scores">
+        <div class="score" id="player-score">0</div>
+        <div class="score" id="computer-score">0</div>
+      </div>
+      <div class="name" id="player-name">You</div>
+      <div class="name" id="computer-name">Smith</div>
+      <div id="marker"></div>
+    </div>
+
+    <div id="commentary">Wooohhaaaaa!!</div>
+
+    <div id="playground">
+      <div id="player-zone">
+        <div id="player-choice">🤜</div>
+        <button class="controls" id="rock" onclick="chose('rock')">👊</button>
+        <button class="controls" id="paper" onclick="chose('paper')">
+          🖐
+        </button>
+        <button class="controls" id="scissors" onclick="chose('scissors')">
+          ✌
+        </button>
+      </div>
+      <div id="comp-choice">🤜</div>
+    </div>
+  </section>
+  <div id="guide">Refresh de pagina om te herstarten</div>
+  <script src="script.js"></script>
+</body>
+<script src="main.js
+</body>
+</html>
