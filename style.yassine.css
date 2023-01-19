@@ -157,10 +157,12 @@ footer{
   margin-top: -300px;
   margin-left: 900px;
   position: absolute;
+  z-index: -1;
 }
 
 #img5{
 margin-left: 900px;
+position: absolute;
 }
 
 .bg {

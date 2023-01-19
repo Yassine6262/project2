@@ -220,5 +220,5 @@ Game.Snake = function(elementId, conf) {
  * Venster Laden
  */
 window.onload = function() {
-  var snake = new Game.Snake('stage', {fps: 80, size: 4});
+  var snake = new Game.Snake('stage', {fps: 100, size: 4});
 };
